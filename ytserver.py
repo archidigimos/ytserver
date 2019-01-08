@@ -14,7 +14,7 @@ class SQLoperations:
 
     def fetchFilteredData(self, tablename,fieldname,value):
         global conn
-        query = "SELECT * from " + tablename + " WHERE " + fieldname + "="+value
+        query = "SELECT * from " + tablename + " WHERE " + fieldname + " = "+value
         response = ""
         flag = False
 
@@ -284,7 +284,7 @@ class SQLoperations:
                 response = self.removeCharFromString(response, -4)
             print(response+"\n")
 		
-		elif (tablename == "storyteller_avaliability"):
+	elif (tablename == "storyteller_avaliability"):
             cursor = conn.execute(query)
             response += "{\"storyteller_avaliability\":\"["
             for row in cursor:
