@@ -127,7 +127,7 @@ class SQLoperations:
                 response = self.removeCharFromString(response, -4)
             print(response+"\n")
 		
-		elif (tablename == "storyteller_avaliability"):
+	elif (tablename == "storyteller_avaliability"):
             cursor = conn.execute(query)
             response += "{\"storyteller_avaliability\":\"["
             for row in cursor:
@@ -295,7 +295,19 @@ class SQLoperations:
             if(flag == True):
                 response = self.removeCharFromString(response, -4)
             print(response+"\n")
-
+	
+	elif (tablename == "storyteller_avaliability"):
+            cursor = conn.execute(query)
+            response += "{\"storyteller_avaliability\":\"["
+            for row in cursor:
+                flag = True
+                response +=  "{\"date\":"+str(row[0])+","
+                response +=  "\"story_teller_ids\":\""+str(row[1])+"\","
+            response += "]\"}"
+            if(flag == True):
+                response = self.removeCharFromString(response, -4)
+            print(response+"\n")
+	
         elif (tablename == "tour"):
             cursor = conn.execute(query)
             response += "{\"tour\":\"["
