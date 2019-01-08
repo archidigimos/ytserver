@@ -126,6 +126,18 @@ class SQLoperations:
             if(flag == True):
                 response = self.removeCharFromString(response, -4)
             print(response+"\n")
+		
+		elif (tablename == "storyteller_avaliability"):
+            cursor = conn.execute(query)
+            response += "{\"storyteller_avaliability\":\"["
+            for row in cursor:
+                flag = True
+                response +=  "{\"date\":"+str(row[0])+","
+                response +=  "\"story_teller_ids\":\""+str(row[1])+"\","
+            response += "]\"}"
+            if(flag == True):
+                response = self.removeCharFromString(response, -4)
+            print(response+"\n")
 
         elif (tablename == "tour"):
             cursor = conn.execute(query)
@@ -203,6 +215,7 @@ class S(BaseHTTPRequestHandler):
         if (post_data.find('SELECT') != -1): 
             print ("Performing SELECT operation")
             post_data_list = post_data.split()
+            # Check for WHERE(For including WHERE API...) To-Do sqlobj.fetchFilteredData()
             status = sqlobj.fetchData(post_data_list[-1])
             self.wfile.write(status)
         elif (post_data.find('INSERT') != -1): 
