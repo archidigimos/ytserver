@@ -14,7 +14,7 @@ class SQLoperations:
 
     def fetchFilteredData(self, tablename,fieldname,value):
         global conn
-        query = "SELECT * from " + tablename + " WHERE " + fieldname "="+value
+        query = "SELECT * from " + tablename + " WHERE " + fieldname + "="+value
         response = ""
         flag = False
 
