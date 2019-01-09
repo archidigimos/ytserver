@@ -14,10 +14,7 @@ class SQLoperations:
 
     def fetchFilteredData(self, tablename,fieldname,value):
         global conn
-        if type(value)==type("String"):
-            query = "SELECT * from " + tablename + " WHERE " + fieldname + " = \""+value + "\""
-        else:
-            query = "SELECT * from " + tablename + " WHERE " + fieldname + " = "+value 
+        query = "SELECT * from " + tablename + " WHERE " + fieldname + " = "+value 
             
         response = ""
         flag = False
@@ -411,6 +408,7 @@ def run(server_class=HTTPServer, handler_class=S, port=80):
 if __name__ == "__main__":
     from sys import argv
     global conn
+    print 
     conn = sqlite3.connect('/home/ubuntu/ytserver/ytdatabase.db')
     if len(argv) == 2:
         run(port=int(argv[1]))
