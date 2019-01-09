@@ -4,7 +4,7 @@ import SocketServer
 import sqlite3
 
 global conn
-print "Database opened successfully";
+print("Database opened successfully")
 
 class SQLoperations:
     def removeCharFromString(self, data, i):
@@ -14,7 +14,11 @@ class SQLoperations:
 
     def fetchFilteredData(self, tablename,fieldname,value):
         global conn
-        query = "SELECT * from " + tablename + " WHERE " + fieldname + " = "+value
+        if type(value)==type("String"):
+            query = "SELECT * from " + tablename + " WHERE " + fieldname + " = \""+value + "\""
+        else:
+            query = "SELECT * from " + tablename + " WHERE " + fieldname + " = "+value 
+            
         response = ""
         flag = False
 
@@ -127,7 +131,7 @@ class SQLoperations:
                 response = self.removeCharFromString(response, -4)
             print(response+"\n")
 		
-	elif (tablename == "storyteller_avaliability"):
+        elif (tablename == "storyteller_avaliability"):
             cursor = conn.execute(query)
             response += "{\"storyteller_avaliability\":\"["
             for row in cursor:
@@ -284,7 +288,7 @@ class SQLoperations:
                 response = self.removeCharFromString(response, -4)
             print(response+"\n")
 		
-	elif (tablename == "storyteller_avaliability"):
+        elif (tablename == "storyteller_avaliability"):
             cursor = conn.execute(query)
             response += "{\"storyteller_avaliability\":\"["
             for row in cursor:
@@ -295,19 +299,7 @@ class SQLoperations:
             if(flag == True):
                 response = self.removeCharFromString(response, -4)
             print(response+"\n")
-	
-	elif (tablename == "storyteller_avaliability"):
-            cursor = conn.execute(query)
-            response += "{\"storyteller_avaliability\":\"["
-            for row in cursor:
-                flag = True
-                response +=  "{\"date\":"+str(row[0])+","
-                response +=  "\"story_teller_ids\":\""+str(row[1])+"\","
-            response += "]\"}"
-            if(flag == True):
-                response = self.removeCharFromString(response, -4)
-            print(response+"\n")
-	
+		
         elif (tablename == "tour"):
             cursor = conn.execute(query)
             response += "{\"tour\":\"["
