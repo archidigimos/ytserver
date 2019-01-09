@@ -14,7 +14,10 @@ class SQLoperations:
 
     def fetchFilteredData(self, tablename,fieldname,value):
         global conn
-        query = "SELECT * from " + tablename + " WHERE " + fieldname + " = "+value 
+        if type(value)==type("String"):
+            query = "SELECT * from " + tablename + " WHERE " + fieldname + " = \""+value + "\""
+        else:
+            query = "SELECT * from " + tablename + " WHERE " + fieldname + " = "+value 
             
         response = ""
         flag = False
@@ -376,6 +379,7 @@ class S(BaseHTTPRequestHandler):
             
             # Check for WHERE(For including WHERE API...) 
             if(post_data.find('WHERE') != -1):
+                print post_data_list
             	status = sqlobj.fetchFilteredData(post_data_list[3],post_data_list[5],post_data_list[7]);
             else:	
             	status = sqlobj.fetchData(post_data_list[-1])
