@@ -384,7 +384,7 @@ class S(BaseHTTPRequestHandler):
                 for idx,data in enumerate(post_data_list):
                     if idx>6:
                         value+=data
-                        if idx!=post_data_list.len-1:
+                        if idx!=len(post_data_list)-1:
                             value+=" "
                 status = sqlobj.fetchFilteredData(post_data_list[3],post_data_list[5],value);
             else:	
