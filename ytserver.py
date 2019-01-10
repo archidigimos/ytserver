@@ -137,7 +137,7 @@ class SQLoperations:
             for row in cursor:
                 flag = True
                 response +=  "{\"date\":\""+str(row[0])+"\","
-                response +=  "\"story_teller_ids\":\""+str(row[1])+"\","
+                response +=  "\"story_teller_ids\":\""+str(row[1])+"\"},"
             response += "]\"}"
             if(flag == True):
                 response = self.removeCharFromString(response, -4)
@@ -294,7 +294,7 @@ class SQLoperations:
             for row in cursor:
                 flag = True
                 response +=  "{\"date\":\""+str(row[0])+"\","
-                response +=  "\"story_teller_ids\":\""+str(row[1])+"\","
+                response +=  "\"story_teller_ids\":\""+str(row[1])+"\"},"
             response += "]\"}"
             if(flag == True):
                 response = self.removeCharFromString(response, -4)
