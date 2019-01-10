@@ -380,7 +380,13 @@ class S(BaseHTTPRequestHandler):
             # Check for WHERE(For including WHERE API...) 
             if(post_data.find('WHERE') != -1):
                 print post_data_list
-            	status = sqlobj.fetchFilteredData(post_data_list[3],post_data_list[5],post_data_list[7]);
+                value = ""
+                for idx,data in enumerate(post_data_list):
+                    if idx>6:
+                        value+=data
+                        if idx!=post_data_list.len-1:
+                            value+=" "
+                status = sqlobj.fetchFilteredData(post_data_list[3],post_data_list[5],value);
             else:	
             	status = sqlobj.fetchData(post_data_list[-1])
             self.wfile.write(status)
