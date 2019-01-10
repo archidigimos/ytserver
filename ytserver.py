@@ -89,7 +89,7 @@ class SQLoperations:
             response += "{\"ops_executive\":\"["
             for row in cursor:
                 flag = True
-                response +=  "{\"id\":"+str(row[0])+","
+                response +=  "{\"id\":\""+str(row[0])+"\","
                 response +=  "\"password\":\""+str(row[1])+"\","
                 response +=  "\"name\":\""+str(row[2])+"\","
                 response +=  "\"designation\":\""+str(row[3])+"\","
@@ -136,7 +136,7 @@ class SQLoperations:
             response += "{\"storyteller_avaliability\":\"["
             for row in cursor:
                 flag = True
-                response +=  "{\"date\":"+str(row[0])+","
+                response +=  "{\"date\":\""+str(row[0])+","
                 response +=  "\"story_teller_ids\":\""+str(row[1])+"\","
             response += "]\"}"
             if(flag == True):
@@ -153,7 +153,7 @@ class SQLoperations:
                 response +=  "\"type_id\":"+str(row[2])+","
                 response +=  "\"city_id\":"+str(row[3])+","
                 response +=  "\"start_time\":\""+str(row[4])+"\","
-                response +=  "\"duration\":"+str(row[5])+","
+                response +=  "\"duration\":\""+str(row[5])+","
                 response +=  "\"price\":"+str(row[6])+"},"
             response += "]\"}"
             if(flag == True):
@@ -246,7 +246,7 @@ class SQLoperations:
             response += "{\"ops_executive\":\"["
             for row in cursor:
                 flag = True
-                response +=  "{\"id\":"+str(row[0])+","
+                response +=  "{\"id\":\""+str(row[0])+"\","
                 response +=  "\"password\":\""+str(row[1])+"\","
                 response +=  "\"name\":\""+str(row[2])+"\","
                 response +=  "\"designation\":\""+str(row[3])+"\","
@@ -293,7 +293,7 @@ class SQLoperations:
             response += "{\"storyteller_avaliability\":\"["
             for row in cursor:
                 flag = True
-                response +=  "{\"date\":"+str(row[0])+","
+                response +=  "{\"date\":\""+str(row[0])+","
                 response +=  "\"story_teller_ids\":\""+str(row[1])+"\","
             response += "]\"}"
             if(flag == True):
@@ -310,7 +310,7 @@ class SQLoperations:
                 response +=  "\"type_id\":"+str(row[2])+","
                 response +=  "\"city_id\":"+str(row[3])+","
                 response +=  "\"start_time\":\""+str(row[4])+"\","
-                response +=  "\"duration\":"+str(row[5])+","
+                response +=  "\"duration\":\""+str(row[5])+","
                 response +=  "\"price\":"+str(row[6])+"},"
             response += "]\"}"
             if(flag == True):
