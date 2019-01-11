@@ -153,7 +153,7 @@ class SQLoperations:
                 response +=  "\"type_id\":"+str(row[2])+","
                 response +=  "\"city_id\":"+str(row[3])+","
                 response +=  "\"start_time\":\""+str(row[4])+"\","
-                response +=  "\"duration\":+str(row[5])+","
+                response +=  "\"duration\":"+str(row[5])+","
                 response +=  "\"price\":"+str(row[6])+"},"
             response += "]\"}"
             if(flag == True):
