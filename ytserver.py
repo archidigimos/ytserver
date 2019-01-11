@@ -28,7 +28,7 @@ class SQLoperations:
             for row in cursor:
                 flag = True
                 response +=  "{\"id\":"+str(row[0])+","
-                response +=  "\"tour_name\":\""+str(row[1])+"\","
+                response +=  "\"tour_id\":"+str(row[1])+","
                 response +=  "\"city_id\":"+str(row[2])+","
                 response +=  "\"date\":\""+str(row[3])+"\","
                 response +=  "\"start_time\":\""+str(row[4])+"\","
@@ -185,7 +185,7 @@ class SQLoperations:
             for row in cursor:
                 flag = True
                 response +=  "{\"id\":"+str(row[0])+","
-                response +=  "\"tour_name\":\""+str(row[1])+"\","
+                response +=  "\"tour_id\":"+str(row[1])+","
                 response +=  "\"city_id\":"+str(row[2])+","
                 response +=  "\"date\":\""+str(row[3])+"\","
                 response +=  "\"start_time\":\""+str(row[4])+"\","
