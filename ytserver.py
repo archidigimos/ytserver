@@ -38,7 +38,8 @@ class SQLoperations:
                 response +=  "\"channel_id\":"+str(row[8])+","
                 response +=  "\"guest_id\":"+str(row[9])+","
                 response +=  "\"booking_reference\":\""+str(row[10])+"\","
-                response +=  "\"storyteller_id\":"+str(row[11])+"},"
+                response +=  "\"storyteller_id\":"+str(row[11])+","
+                response +=  "\"amount\":"+str(row[12])+"},"
             response += "]\"}"
             if(flag == True):
                 response = self.removeCharFromString(response, -4)
@@ -195,7 +196,8 @@ class SQLoperations:
                 response +=  "\"channel_id\":"+str(row[8])+","
                 response +=  "\"guest_id\":"+str(row[9])+","
                 response +=  "\"booking_reference\":\""+str(row[10])+"\","
-                response +=  "\"storyteller_id\":"+str(row[11])+"},"
+                response +=  "\"storyteller_id\":"+str(row[11])+","
+                response +=  "\"amount\":"+str(row[12])+"},"
             response += "]\"}"
             if(flag == True):
                 response = self.removeCharFromString(response, -4)
