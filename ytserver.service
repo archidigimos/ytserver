@@ -1,0 +1,11 @@
+[Unit]
+Description=ytserver
+After=network.target
+
+[Service]
+WorkingDirectory=/home/ubuntu/ytserver
+ExecStart=/bin/sh -c "sudo python ytserver.py"
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
